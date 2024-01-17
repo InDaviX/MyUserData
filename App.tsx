@@ -3,12 +3,13 @@ import {
   Pressable,
   SafeAreaView,
   ScrollView,
-  Switch,
+  // Switch,
   Text,
   TextInput,
   View,
   TouchableWithoutFeedback,
 } from 'react-native';
+import Icons from 'react-native-vector-icons/Feather';
 
 const App = () => {
   const [uName, setUName] = useState('');
@@ -84,7 +85,7 @@ const App = () => {
               Submit
             </Text>
           </Pressable>
-          <TouchableWithoutFeedback onPress={() => setShowMore(!showMore)}>
+          {/* <TouchableWithoutFeedback onPress={() => setShowMore(!showMore)}>
             <View
               style={{
                 flex: 1,
@@ -110,6 +111,18 @@ const App = () => {
                 Show my data
               </Text>
             </View>
+          </TouchableWithoutFeedback> */}
+          <TouchableWithoutFeedback
+            onPress={() => {
+              setShowMore(!showMore);
+            }}
+            style={{width: 'auto', height: 60, backgroundColor: '#A9A9A9'}}>
+            <Icons
+              name={showMore ? 'chevron-down' : 'chevron-up'}
+              size={40}
+              color="black"
+              style={{padding: 10, alignSelf: 'flex-end'}}
+            />
           </TouchableWithoutFeedback>
         </View>
 
